@@ -5,32 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cras</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    iframe {
+      pointer-events: none; /* Evita interações com o vídeo */
+    }
+  </style>
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-black text-white font-sans overflow-x-hidden">
 
   <!-- Hero Section + Posters sobrepostos -->
-  <section class="relative">
-    <!-- Hero Background -->
-    <div class="relative bg-cover bg-center h-screen" style="background-image: url('Background.jpg');">
-      <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-start p-10">
-        <h1 class="text-4xl font-bold mb-4">Unleash the Fury</h1>
-        <p class="mb-6 max-w-md">Experience the raw power of Metal Mania, the band that's redefining heavy metal for a new generation.</p>
-        <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Listen Now</button>
-      </div>
+  <section id="noticias" class="relative overflow-hidden">
+    <!-- Video background -->
+    <div class="absolute inset-0 z-0">
+      <iframe 
+        class="w-full h-full"
+        src="https://www.youtube.com/embed/8zzvWDda79Q?autoplay=1&mute=1&controls=0&loop=1&playlist=8zzvWDda79Q&rel=0" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-20 flex flex-col justify-center items-start h-screen p-10">
+      <h1 class="text-4xl font-bold mb-4">Unleash the Fury</h1>
+      <p class="mb-6 max-w-md">Experience the raw power of Metal Mania, the band that's redefining heavy metal for a new generation.</p>
+      <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Listen Now</button>
     </div>
 
     <!-- Posters Section sobreposto -->
-    <div class="relative z-10 -mt-24 px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="relative z-20 -mt-24 px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <div class="p-2 shadow-lg">
         <img src="capa02.jpg" alt="Show Poster" class="w-full">
         <p class="mt-2 text-sm">Escute!<br>a gentil indiferença do mundo</p>
       </div>
       <div class="p-2 shadow-lg">
-        <img src="elasnorock.jpg" alt="Show Poster" class="w-full">
-        <p class="mt-2 text-sm">Elas no Rock!<br> 2° Festival Elas no Rock um verdadeiro marco na cena musical feminino, reunindo Bandas lideradas por mulhere</p>
+        <img src="https://via.placeholder.com/300x400.png?text=Elas+no+Rock" alt="Show Poster" class="w-full">
+        <p class="mt-2 text-sm">TMDQA!<br>Mulheres na Cena: 10 bandas brasileiras lideradas por mulheres</p>
       </div>
       <div class="p-2 shadow-lg">
-        <img src="tmdqa.jpg" alt="Show Poster" class="w-full">
+        <img src="https://via.placeholder.com/300x400.png?text=Elas+no+Rock" alt="Show Poster" class="w-full">
         <p class="mt-2 text-sm">TMDQA!<br>Mulheres na Cena: 10 bandas brasileiras lideradas por mulheres</p>
       </div>
       <div class="p-2 shadow-lg">
@@ -41,7 +61,7 @@
   </section>
 
   <!-- Shows Section -->
-  <section class="py-16 px-6 bg-black">
+  <section id="shows" class="py-16 px-6 bg-black">
     <h2 class="text-2xl font-bold mb-4">Shows</h2>
     <p class="mb-8">Show your allegiance to Metal Mania with our exclusive merchandise. From t-shirts to hoodies, we've got everything you need to represent the band.</p>
 
@@ -62,7 +82,7 @@
   </section>
 
   <!-- Merchandise Section -->
-  <section class="py-16 px-6 bg-white text-black">
+  <section id="merch" class="py-16 px-6 bg-white text-black">
     <h2 class="text-2xl font-bold mb-4">Merchandise</h2>
     <p class="mb-8">Show your allegiance to Metal Mania with our exclusive merchandise. From t-shirts to hoodies, we've got everything you need to represent the band.</p>
 
