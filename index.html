@@ -5,11 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cras</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body class="bg-black text-white font-sans">
 
+  <!-- Header transparente -->
+  <header class="w-full text-white z-50">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+      <div class="font-bold text-xl">CRAS</div>
+      <ul class="flex space-x-6">
+        <li><a href="#noticias" class="hover:text-red-500">Notícias</a></li>
+        <li><a href="#shows" class="hover:text-red-500">Shows</a></li>
+        <li><a href="#merch" class="hover:text-red-500">Merchandise</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <!-- Hero Section + Posters sobrepostos -->
-  <section class="relative">
+  <section id="noticias" class="relative">
     <!-- Hero Background -->
     <div class="relative bg-cover bg-center h-screen" style="background-image: url('Background.jpg');">
       <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-start p-10">
@@ -26,11 +43,11 @@
         <p class="mt-2 text-sm">Escute!<br>a gentil indiferença do mundo</p>
       </div>
       <div class="p-2 shadow-lg">
-        <img src="elasnorock.jpg" alt="Show Poster" class="w-full">
-        <p class="mt-2 text-sm">Elas no Rock!<br> 2° Festival Elas no Rock um verdadeiro marco na cena musical feminino, reunindo Bandas lideradas por mulhere</p>
+        <img src="https://via.placeholder.com/300x400.png?text=Elas+no+Rock" alt="Show Poster" class="w-full">
+        <p class="mt-2 text-sm">TMDQA!<br>Mulheres na Cena: 10 bandas brasileiras lideradas por mulheres</p>
       </div>
       <div class="p-2 shadow-lg">
-        <img src="tmdqa.jpg" alt="Show Poster" class="w-full">
+        <img src="https://via.placeholder.com/300x400.png?text=Elas+no+Rock" alt="Show Poster" class="w-full">
         <p class="mt-2 text-sm">TMDQA!<br>Mulheres na Cena: 10 bandas brasileiras lideradas por mulheres</p>
       </div>
       <div class="p-2 shadow-lg">
@@ -41,7 +58,7 @@
   </section>
 
   <!-- Shows Section -->
-  <section class="py-16 px-6 bg-black">
+  <section id="shows" class="py-16 px-6 bg-black">
     <h2 class="text-2xl font-bold mb-4">Shows</h2>
     <p class="mb-8">Show your allegiance to Metal Mania with our exclusive merchandise. From t-shirts to hoodies, we've got everything you need to represent the band.</p>
 
@@ -62,7 +79,7 @@
   </section>
 
   <!-- Merchandise Section -->
-  <section class="py-16 px-6 bg-white text-black">
+  <section id="merch" class="py-16 px-6 bg-white text-black">
     <h2 class="text-2xl font-bold mb-4">Merchandise</h2>
     <p class="mb-8">Show your allegiance to Metal Mania with our exclusive merchandise. From t-shirts to hoodies, we've got everything you need to represent the band.</p>
 
