@@ -18,11 +18,15 @@
     
     <!-- Video background for desktop -->
     <div class="absolute inset-0 z-0 hidden sm:block">
-      <video autoplay muted loop playsinline class="w-full h-full object-cover">
-        <source src="divulgacao2.mp4" type="video/mp4">
-        Seu navegador não suporta o elemento de vídeo.
-      </video>
+      <div style="position:relative;width:100%;height:100%;">
+        <iframe src="https://player.vimeo.com/video/1086605747?background=1&autoplay=1&muted=1&loop=1&autopause=0&byline=0&title=0"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;"
+          title="Vídeo de Divulgação"></iframe>
+      </div>
     </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
 
     <!-- Image background for mobile -->
     <div class="absolute inset-0 z-0 block sm:hidden bg-cover bg-center" style="background-image: url('Background.jpg');">
