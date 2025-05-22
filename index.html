@@ -6,11 +6,10 @@
   <title>Cras</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
+
 <body class="bg-black text-white font-sans overflow-x-hidden">
 
   <!-- Hero Section -->
@@ -83,55 +82,44 @@
     <p class="mb-8">Show your allegiance to Metal Mania with our exclusive merchandise. From t-shirts to hoodies, we've got everything you need to represent the band.</p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-      <!-- Repetir para cada produto -->
       <div class="bg-gray-100 p-4">
         <div class="relative">
           <img src="moletom.jpg" class="w-full h-[200px] object-cover merch-img">
-          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
-          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
         </div>
         <p class="mt-2 text-sm">Moletom<br>R$150,00</p>
-        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+        <button onclick="openModal('moletom.jpg')" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
       </div>
 
       <div class="bg-gray-100 p-4">
         <div class="relative">
           <img src="kintsugi.jpg" class="w-full h-[200px] object-cover merch-img">
-          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
-          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
         </div>
         <p class="mt-2 text-sm">Camiseta<br>R$50,00</p>
-        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+        <button onclick="openModal('kintsugi.jpg')" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
       </div>
 
       <div class="bg-gray-100 p-4">
         <div class="relative">
           <img src="bruxa.jpg" class="w-full h-[200px] object-cover merch-img">
-          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
-          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
         </div>
         <p class="mt-2 text-sm">Accessories<br>Patches, hats, and more.</p>
-        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+        <button onclick="openModal('bruxa.jpg')" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
       </div>
 
       <div class="bg-gray-100 p-4">
         <div class="relative">
           <img src="caveira1.jpg" class="w-full h-[200px] object-cover merch-img">
-          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
-          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
         </div>
         <p class="mt-2 text-sm">Accessories<br>Patches, hats, and more.</p>
-        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+        <button onclick="openModal('caveira1.jpg')" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
       </div>
 
       <div class="bg-gray-100 p-4">
         <div class="relative">
           <img src="santa1.jpg" class="w-full h-[200px] object-cover merch-img">
-          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
-          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
         </div>
         <p class="mt-2 text-sm">Accessories<br>Patches, hats, and more.</p>
-        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+        <button onclick="openModal('santa1.jpg')" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
       </div>
     </div>
   </section>
@@ -149,41 +137,57 @@
     </a>
   </section>
 
-<script>
-  // Fade-in animação
-  window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.fade-in-card').forEach((el, i) => {
-      setTimeout(() => {
-        el.classList.remove('opacity-0', 'scale-90');
-      }, i * 200);
+  <!-- Modal de Pagamento PIX -->
+  <div id="pixModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+    <div class="bg-white text-black rounded-lg shadow-lg p-6 max-w-sm transform scale-90 opacity-0 transition-all duration-300">
+      <h3 class="text-xl font-bold mb-4">Pagamento via PIX</h3>
+      <img id="modalImg" src="" alt="Produto" class="w-full h-48 object-cover mb-4 rounded">
+      <p class="mb-2">Chave PIX:</p>
+      <div class="flex items-center justify-between bg-gray-200 px-3 py-2 rounded mb-4">
+        <span id="pixKey">cras@banda.com</span>
+        <button onclick="copyPix()" class="text-sm text-blue-600 hover:underline">Copiar</button>
+      </div>
+      <button onclick="closeModal()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Fechar</button>
+    </div>
+  </div>
+
+  <script>
+    // Fade-in animação
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.fade-in-card').forEach((el, i) => {
+        setTimeout(() => {
+          el.classList.remove('opacity-0', 'scale-90');
+        }, i * 200);
+      });
     });
-  });
 
-  // Carrossel simples para Merch
-  const images = [
-    ['moletom.jpg', 'moletom3.jpg'],
-    ['kintsugi.jpg',],
-    ['bruxa.jpg', 'bruxa1.jpg'],
-    ['caveira1.jpg', 'caveira2.jpg'],
-    ['santa1.jpg', 'santa2.jpg']
-  ];
+    // Modal de Pagamento
+    function openModal(imgSrc) {
+      const modal = document.getElementById('pixModal');
+      const modalImg = document.getElementById('modalImg');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.querySelector('div').classList.remove('opacity-0', 'scale-90');
+      }, 10);
+      modalImg.src = imgSrc;
+    }
 
-  let indices = [0, 0, 0, 0, 0];
+    function closeModal() {
+      const modal = document.getElementById('pixModal');
+      const content = modal.querySelector('div');
+      content.classList.add('opacity-0', 'scale-90');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
 
-  function nextSlide(btn) {
-    const card = btn.closest('.bg-gray-100');
-    const idx = Array.from(card.parentElement.children).indexOf(card);
-    indices[idx] = (indices[idx] + 1) % images[idx].length;
-    card.querySelector('.merch-img').src = images[idx][indices[idx]];
-  }
-
-  function prevSlide(btn) {
-    const card = btn.closest('.bg-gray-100');
-    const idx = Array.from(card.parentElement.children).indexOf(card);
-    indices[idx] = (indices[idx] - 1 + images[idx].length) % images[idx].length;
-    card.querySelector('.merch-img').src = images[idx][indices[idx]];
-  }
-</script>
+    function copyPix() {
+      const pixKey = document.getElementById('pixKey').innerText;
+      navigator.clipboard.writeText(pixKey).then(() => {
+        alert('Chave PIX copiada!');
+      });
+    }
+  </script>
 
 </body>
 </html>
