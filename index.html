@@ -7,134 +7,26 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate-fadeIn { animation: fadeIn 0.3s ease-out forwards; }
   </style>
 </head>
 
 <body class="bg-black text-white font-sans overflow-x-hidden">
 
-  <!-- Hero Section -->
-  <section id="noticias" class="relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-[100vw] h-[100vh] z-0 hidden sm:block">
-      <iframe src="https://player.vimeo.com/video/1086605747?background=1&autoplay=1&muted=1&loop=1&autopause=0&byline=0&title=0"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        class="w-full h-full object-cover"
-        title="Vídeo de Divulgação"></iframe>
-    </div>
-    <script src="https://player.vimeo.com/api/player.js"></script>
-
-    <div class="absolute inset-0 z-0 block sm:hidden bg-cover bg-center" style="background-image: url('Background.jpg');"></div>
-    <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
-
-    <div class="relative z-20 flex flex-col justify-center items-start h-screen px-6 md:px-16 lg:px-32">
-      <p class="mb-6 max-w-md">Ouça</p>
-      <h1 class="text-4xl font-bold mb-4">"A Gentil Indiferença do Mundo"</h1>
-      <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Listen Now</button>
-    </div>
-  </section>
-
-  <!-- Posters Section com fade-in -->
-  <div class="relative z-30 -mt-24 sm:-mt-32 mb-12 px-6 md:px-16 lg:px-32 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    <div class="fade-in-card p-2 shadow-lg opacity-0 scale-90 transform transition-all duration-1000">
-      <img src="capa02.jpg" alt="Show Poster" class="w-full object-cover">
-      <p class="mt-2 text-sm text-center">a gentil indiferença do mundo</p>
-    </div>
-    <div class="fade-in-card p-2 shadow-lg opacity-0 scale-90 transform transition-all duration-1000">
-      <img src="capa 01.jpg" alt="Show Poster" class="w-full object-cover">
-      <p class="mt-2 text-sm text-center">Kintsugi</p>
-    </div>
-    <div class="fade-in-card p-2 shadow-lg opacity-0 scale-90 transform transition-all duration-1000">
-      <img src="Cras Capa streaming.jpg" alt="Show Poster" class="w-full object-cover">
-      <p class="mt-2 text-sm text-center">Desperato</p>
-    </div>
-    <div class="fade-in-card p-2 shadow-lg opacity-0 scale-90 transform transition-all duration-1000">
-      <img src="Camada2.jpg" alt="Show Poster" class="w-full object-cover">
-      <p class="mt-2 text-sm text-center">Beta</p>
-    </div>
-  </div>
-
-  <!-- Shows Section -->
-  <section id="shows" class="py-40 px-6 md:px-16 lg:px-32 text-white relative bg-cover bg-center" style="background-image: url('Background.jpg');">
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-    <div class="relative z-10 space-y-6">
-      <h2 class="text-2xl font-bold">Shows</h2>
-      <p>Show your allegiance to Metal Mania with our exclusive merchandise. From t-shirts to hoodies, we've got everything you need to represent the band.</p>
-      <div class="space-y-4">
-        <div class="flex justify-between items-center border-b border-gray-300 py-2">
-          <span>07 de junho 2025 - Elas em cena - Santa Gertrudes - SP</span>
-          <button class="bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded">Comprar ingresso</button>
-        </div>
-        <div class="flex justify-between items-center border-b border-gray-300 py-2">
-          <span>12 de julho 2025 - Praprika - São Paulo - SP</span>
-          <button class="bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded">Comprar ingresso</button>
-        </div>
-        <div class="flex justify-between items-center border-b border-gray-300 py-2">
-          <span>20 de julho 2025 - Hocus Pocus - São José dos Campos - SP</span>
-          <button class="bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded">Comprar ingresso</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Merchandise Section -->
+  <!-- Merchandise Section Simplificada -->
   <section id="merch" class="py-16 px-6 md:px-16 lg:px-32 bg-white text-black">
     <h2 class="text-2xl font-bold mb-4">Merchandise</h2>
-    <p class="mb-8">Show your allegiance to Metal Mania with our exclusive merchandise. From t-shirts to hoodies, we've got everything you need to represent the band.</p>
-
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
       <div class="bg-gray-100 p-4">
-        <div class="relative">
-          <img src="moletom.jpg" class="w-full h-[200px] object-cover merch-img">
-        </div>
+        <img src="moletom.jpg" class="w-full h-[200px] object-cover merch-img">
         <p class="mt-2 text-sm">Moletom<br>R$150,00</p>
         <button onclick="openModal('moletom.jpg')" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
       </div>
-
-      <div class="bg-gray-100 p-4">
-        <div class="relative">
-          <img src="kintsugi.jpg" class="w-full h-[200px] object-cover merch-img">
-        </div>
-        <p class="mt-2 text-sm">Camiseta<br>R$50,00</p>
-        <button onclick="openModal('kintsugi.jpg')" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
-      </div>
-
-      <div class="bg-gray-100 p-4">
-        <div class="relative">
-          <img src="bruxa.jpg" class="w-full h-[200px] object-cover merch-img">
-        </div>
-        <p class="mt-2 text-sm">Accessories<br>Patches, hats, and more.</p>
-        <button onclick="openModal('bruxa.jpg')" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
-      </div>
-
-      <div class="bg-gray-100 p-4">
-        <div class="relative">
-          <img src="caveira1.jpg" class="w-full h-[200px] object-cover merch-img">
-        </div>
-        <p class="mt-2 text-sm">Accessories<br>Patches, hats, and more.</p>
-        <button onclick="openModal('caveira1.jpg')" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
-      </div>
-
-      <div class="bg-gray-100 p-4">
-        <div class="relative">
-          <img src="santa1.jpg" class="w-full h-[200px] object-cover merch-img">
-        </div>
-        <p class="mt-2 text-sm">Accessories<br>Patches, hats, and more.</p>
-        <button onclick="openModal('santa1.jpg')" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
-      </div>
     </div>
-  </section>
-
-  <!-- Material de Divulgação Section -->
-  <section id="divulgacao" class="py-16 px-6 md:px-16 lg:px-32 bg-black text-white">
-    <h2 class="text-2xl font-bold mb-4">Para jornalistas, produtores e apoiadores:</h2>
-    <p class="mb-6 max-w-md">
-      Nosso press kit completo com fotos em alta qualidade, releases e informações oficiais.<br>
-      Baixe e ajude a espalhar a fúria da Cras pelo mundo.
-    </p>
-    <a href="https://drive.google.com/drive/folders/1I79UhTII1O7r-ZZHSvAInMcWc6AC9Foy?usp=sharing" target="_blank" rel="noopener noreferrer"
-       class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-      Baixar Press Kit
-    </a>
   </section>
 
   <!-- Modal de Pagamento PIX -->
@@ -147,21 +39,16 @@
         <span id="pixKey">cras@banda.com</span>
         <button onclick="copyPix()" class="text-sm text-blue-600 hover:underline">Copiar</button>
       </div>
-      <button onclick="closeModal()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Fechar</button>
+      <button onclick="closeModal()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-2">Fechar</button>
+      <a href="https://wa.me/5511958265259?text=Olá,%20fiz%20o%20pagamento%20via%20PIX%20para%20a%20banda%20Cras.%20Segue%20meu%20comprovante." 
+         target="_blank" 
+         class="block w-full text-center bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        Enviar Comprovante via WhatsApp
+      </a>
     </div>
   </div>
 
   <script>
-    // Fade-in animação
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.fade-in-card').forEach((el, i) => {
-        setTimeout(() => {
-          el.classList.remove('opacity-0', 'scale-90');
-        }, i * 200);
-      });
-    });
-
-    // Modal de Pagamento
     function openModal(imgSrc) {
       const modal = document.getElementById('pixModal');
       const modalImg = document.getElementById('modalImg');
