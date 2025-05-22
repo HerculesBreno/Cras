@@ -34,7 +34,7 @@
     </div>
   </section>
 
-  <!-- Posters Section -->
+  <!-- Posters Section com fade-in -->
   <div class="relative z-30 -mt-24 sm:-mt-32 mb-12 px-6 md:px-16 lg:px-32 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
     <div class="fade-in-card p-2 shadow-lg max-w-full opacity-0 scale-90 transform transition-all duration-1000">
       <img src="capa02.jpg" alt="Show Poster" class="w-full">
@@ -77,11 +77,70 @@
     </div>
   </section>
 
+  <!-- Merchandise Section -->
+  <section id="merch" class="py-16 px-6 md:px-16 lg:px-32 bg-white text-black">
+    <h2 class="text-2xl font-bold mb-4">Merchandise</h2>
+    <p class="mb-8">Show your allegiance to Metal Mania with our exclusive merchandise. From t-shirts to hoodies, we've got everything you need to represent the band.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      <!-- Card exemplo com carrossel -->
+      <div class="bg-gray-100 p-4">
+        <div class="relative">
+          <img src="moletom1.jpg" class="w-full merch-img">
+          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
+          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
+        </div>
+        <p class="mt-2 text-sm">Moletom<br>R$150,00</p>
+        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+      </div>
+
+      <div class="bg-gray-100 p-4">
+        <div class="relative">
+          <img src="kintsugi1.jpg" class="w-full merch-img">
+          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
+          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
+        </div>
+        <p class="mt-2 text-sm">Camiseta<br>R$50,00</p>
+        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+      </div>
+
+      <div class="bg-gray-100 p-4">
+        <div class="relative">
+          <img src="merch1.jpg" class="w-full merch-img">
+          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
+          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
+        </div>
+        <p class="mt-2 text-sm">Accessories<br>Patches, hats, and more.</p>
+        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+      </div>
+
+      <div class="bg-gray-100 p-4">
+        <div class="relative">
+          <img src="merch2.jpg" class="w-full merch-img">
+          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
+          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
+        </div>
+        <p class="mt-2 text-sm">Accessories<br>Patches, hats, and more.</p>
+        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+      </div>
+
+      <div class="bg-gray-100 p-4">
+        <div class="relative">
+          <img src="merch3.jpg" class="w-full merch-img">
+          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
+          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
+        </div>
+        <p class="mt-2 text-sm">Accessories<br>Patches, hats, and more.</p>
+        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+      </div>
+    </div>
+  </section>
+
   <!-- Material de Divulgação Section -->
   <section id="divulgacao" class="py-16 px-6 md:px-16 lg:px-32 bg-black text-white">
     <h2 class="text-2xl font-bold mb-4">Para jornalistas, produtores e apoiadores:</h2>
     <p class="mb-6 max-w-md">
-     Nosso press kit completo com fotos em alta qualidade, releases e informações oficiais. <br>
+     Nosso press kit completo com fotos em alta qualidade, releases e informações oficiais.<br>
      Baixe e ajude a espalhar a fúria da Cras pelo mundo.
     </p>
     <a href="https://drive.google.com/drive/folders/1I79UhTII1O7r-ZZHSvAInMcWc6AC9Foy?usp=sharing" target="_blank" rel="noopener noreferrer"
@@ -90,15 +149,40 @@
     </a>
   </section>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.fade-in-card').forEach((el, i) => {
-        setTimeout(() => {
-          el.classList.remove('opacity-0', 'scale-90');
-        }, i * 200); // delay progressivo entre os cards
-      });
+<script>
+  // Fade-in animação
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.fade-in-card').forEach((el, i) => {
+      setTimeout(() => {
+        el.classList.remove('opacity-0', 'scale-90');
+      }, i * 200);
     });
-  </script>
+  });
+
+  // Carrossel simples para Merch
+  const images = [
+    ['moletom1.jpg', 'moletom2.jpg'],
+    ['kintsugi1.jpg', 'kintsugi2.jpg'],
+    ['merch1.jpg', 'merch1b.jpg'],
+    ['merch2.jpg', 'merch2b.jpg'],
+    ['merch3.jpg', 'merch3b.jpg']
+  ];
+  let indices = [0, 0, 0, 0, 0];
+
+  function nextSlide(btn) {
+    const card = btn.closest('div').parentElement;
+    const idx = Array.from(card.parentElement.children).indexOf(card);
+    indices[idx] = (indices[idx] + 1) % images[idx].length;
+    card.querySelector('.merch-img').src = images[idx][indices[idx]];
+  }
+
+  function prevSlide(btn) {
+    const card = btn.closest('div').parentElement;
+    const idx = Array.from(card.parentElement.children).indexOf(card);
+    indices[idx] = (indices[idx] - 1 + images[idx].length) % images[idx].length;
+    card.querySelector('.merch-img').src = images[idx][indices[idx]];
+  }
+</script>
 
 </body>
 </html>
