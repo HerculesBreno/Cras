@@ -123,24 +123,30 @@
     </a>
   </section>
 
-  <!-- Modal de Pagamento PIX -->
-  <div id="pixModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
-    <div class="bg-white text-black rounded-lg shadow-lg p-6 max-w-sm transform scale-90 opacity-0 transition-all duration-300">
-      <h3 class="text-xl font-bold mb-4">Pagamento via PIX</h3>
-      <img id="modalImg" src="" alt="Produto" class="w-full h-48 object-cover mb-4 rounded">
-      <p class="mb-2">Chave PIX:</p>
-      <div class="flex items-center justify-between bg-gray-200 px-3 py-2 rounded mb-4">
-        <span id="pixKey">cras@banda.com</span>
-        <button onclick="copyPix()" class="text-sm text-blue-600 hover:underline">Copiar</button>
-      </div>
-      <button onclick="closeModal()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-2">Fechar</button>
-      <a href="https://wa.me/5511958265259?text=Olá,%20fiz%20o%20pagamento%20via%20PIX%20para%20a%20banda%20Cras.%20Segue%20meu%20comprovante." 
-         target="_blank" 
-         class="block w-full text-center bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-        Enviar Comprovante via WhatsApp
-      </a>
+ <!-- Modal de Pagamento PIX -->
+<div id="pixModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+  <div class="bg-white text-black rounded-lg shadow-lg p-6 max-w-sm transform scale-90 opacity-0 transition-all duration-300">
+    <h3 class="text-xl font-bold mb-4">Pagamento via PIX</h3>
+    <img id="modalImg" src="" alt="Produto" class="w-full h-48 object-cover mb-4 rounded">
+    <p class="mb-2">Chave PIX:</p>
+    <div class="flex items-center justify-between bg-gray-200 px-3 py-2 rounded mb-4">
+      <span id="pixKey">cras@banda.com</span>
+      <button onclick="copyPix()" class="text-sm text-blue-600 hover:underline">Copiar</button>
     </div>
+    
+    <!-- Botão principal: WhatsApp -->
+    <a href="https://wa.me/5511958265259?text=Olá,%20fiz%20o%20pagamento%20via%20PIX%20para%20a%20banda%20Cras.%20Segue%20meu%20comprovante." 
+       target="_blank" 
+       class="block w-full text-center bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">
+      Enviar Comprovante via WhatsApp
+    </a>
+    
+    <!-- Botão secundário: Fechar -->
+    <button onclick="closeModal()" class="w-full text-gray-500 hover:text-gray-700 font-semibold py-2">
+      Fechar
+    </button>
   </div>
+</div>
 
   <script>
     // Fade-in animação
