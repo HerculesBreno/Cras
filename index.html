@@ -35,20 +35,20 @@
   </section>
 
   <!-- Posters Section -->
-  <div class="relative z-30 -mt-24 sm:-mt-32 mb-12 px-6 md:px-16 lg:px-32 flex flex-wrap justify-center gap-[52px]">
-    <div class="p-2 shadow-lg max-w-[300px]">
+  <div class="relative z-30 -mt-24 sm:-mt-32 mb-12 px-6 md:px-16 lg:px-32 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="fade-in-card p-2 shadow-lg max-w-full opacity-0 scale-90 transform transition-all duration-1000">
       <img src="capa02.jpg" alt="Show Poster" class="w-full">
       <p class="mt-2 text-sm text-center">a gentil indiferença do mundo</p>
     </div>
-    <div class="p-2 shadow-lg max-w-[300px]">
+    <div class="fade-in-card p-2 shadow-lg max-w-full opacity-0 scale-90 transform transition-all duration-1000">
       <img src="capa 01.jpg" alt="Show Poster" class="w-full">
       <p class="mt-2 text-sm text-center">Kintsugi</p>
     </div>
-    <div class="p-2 shadow-lg max-w-[300px]">
+    <div class="fade-in-card p-2 shadow-lg max-w-full opacity-0 scale-90 transform transition-all duration-1000">
       <img src="Cras Capa streaming.jpg" alt="Show Poster" class="w-full">
       <p class="mt-2 text-sm text-center">Desperato</p>
     </div>
-    <div class="p-2 shadow-lg max-w-[300px]">
+    <div class="fade-in-card p-2 shadow-lg max-w-full opacity-0 scale-90 transform transition-all duration-1000">
       <img src="Camada2.jpg" alt="Show Poster" class="w-full">
       <p class="mt-2 text-sm text-center">Beta</p>
     </div>
@@ -77,102 +77,28 @@
     </div>
   </section>
 
-  <!-- Merchandise Section -->
-  <section id="merch" class="py-16 px-6 md:px-16 lg:px-32 bg-white text-black">
-    <h2 class="text-2xl font-bold mb-4">Merchandise</h2>
-    <p class="mb-8">Show your allegiance to Metal Mania with our exclusive merchandise. From t-shirts to hoodies, we've got everything you need to represent the band.</p>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-      <!-- Card com carrossel -->
-      <div class="bg-gray-100 p-4 max-w-[300px]">
-        <div class="relative w-full h-72 overflow-hidden">
-          <img src="moletom.jpg" class="w-full h-full object-cover merch-img">
-          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1 z-10">‹</button>
-          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1 z-10">›</button>
-        </div>
-        <p class="mt-2 text-sm">Moletom<br>R$150,00</p>
-        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
-      </div>
-
-      <div class="bg-gray-100 p-4 max-w-[300px]">
-        <div class="relative w-full h-72 overflow-hidden">
-          <img src="kintsugi.jpg" class="w-full h-full object-cover merch-img">
-          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1 z-10">‹</button>
-          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1 z-10">›</button>
-        </div>
-        <p class="mt-2 text-sm">Camiseta<br>R$50,00</p>
-        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
-      </div>
-
-      <div class="bg-gray-100 p-4 max-w-[300px]">
-        <div class="relative w-full h-72 overflow-hidden">
-          <img src="bruxa.jpg" class="w-full h-full object-cover merch-img">
-          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1 z-10">‹</button>
-          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1 z-10">›</button>
-        </div>
-        <p class="mt-2 text-sm">Accessories<br>Complete your look with patches, hats, and more.</p>
-        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
-      </div>
-
-      <div class="bg-gray-100 p-4 max-w-[300px]">
-        <div class="relative w-full h-72 overflow-hidden">
-          <img src="santa2.jpg" class="w-full h-full object-cover merch-img">
-          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1 z-10">‹</button>
-          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1 z-10">›</button>
-        </div>
-        <p class="mt-2 text-sm">Accessories<br>Complete your look with patches, hats, and more.</p>
-        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
-      </div>
-
-      <div class="bg-gray-100 p-4 max-w-[300px]">
-        <div class="relative w-full h-72 overflow-hidden">
-          <img src="caveira1.jpg" class="w-full h-full object-cover merch-img">
-          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1 z-10">‹</button>
-          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1 z-10">›</button>
-        </div>
-        <p class="mt-2 text-sm">Accessories<br>Complete your look with patches, hats, and more.</p>
-        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
-      </div>
-    </div>
-  </section>
-
   <!-- Material de Divulgação Section -->
   <section id="divulgacao" class="py-16 px-6 md:px-16 lg:px-32 bg-black text-white">
     <h2 class="text-2xl font-bold mb-4">Para jornalistas, produtores e apoiadores:</h2>
     <p class="mb-6 max-w-md">
-      Nosso press kit completo com fotos em alta qualidade, releases e informações oficiais.<br>
-      Baixe e ajude a espalhar a fúria da Cras pelo mundo.
+     Nosso press kit completo com fotos em alta qualidade, releases e informações oficiais. <br>
+     Baixe e ajude a espalhar a fúria da Cras pelo mundo.
     </p>
     <a href="https://drive.google.com/drive/folders/1I79UhTII1O7r-ZZHSvAInMcWc6AC9Foy?usp=sharing" target="_blank" rel="noopener noreferrer"
        class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-      Baixar Press Kit
+     Baixar Press Kit
     </a>
   </section>
 
-<script>
-  const images = [
-    ['moletom.jpg', 'moleton3.jpg'],
-    ['kintsugi.jpg'],
-    ['bruxa.jpg', 'bruxa2.jpg'],
-    ['santa2.jpg', 'santa1.jpg'],
-    ['caveira1.jpg', 'caveira2.jpg']
-  ];
-  let indices = [0, 0, 0, 0, 0];
-
-  function nextSlide(btn) {
-    const card = btn.closest('.relative').parentElement;
-    const idx = Array.from(card.parentElement.children).indexOf(card);
-    indices[idx] = (indices[idx] + 1) % images[idx].length;
-    card.querySelector('.merch-img').src = images[idx][indices[idx]];
-  }
-
-  function prevSlide(btn) {
-    const card = btn.closest('.relative').parentElement;
-    const idx = Array.from(card.parentElement.children).indexOf(card);
-    indices[idx] = (indices[idx] - 1 + images[idx].length) % images[idx].length;
-    card.querySelector('.merch-img').src = images[idx][indices[idx]];
-  }
-</script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.fade-in-card').forEach((el, i) => {
+        setTimeout(() => {
+          el.classList.remove('opacity-0', 'scale-90');
+        }, i * 200); // delay progressivo entre os cards
+      });
+    });
+  </script>
 
 </body>
 </html>
