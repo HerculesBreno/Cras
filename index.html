@@ -15,8 +15,6 @@
 
   <!-- Hero Section -->
   <section id="noticias" class="relative overflow-hidden">
-
-    <!-- Video background for desktop -->
     <div class="absolute top-0 left-0 w-[100vw] h-[100vh] z-0 hidden sm:block">
       <iframe src="https://player.vimeo.com/video/1086605747?background=1&autoplay=1&muted=1&loop=1&autopause=0&byline=0&title=0"
         frameborder="0"
@@ -26,14 +24,9 @@
     </div>
     <script src="https://player.vimeo.com/api/player.js"></script>
 
-    <!-- Image background for mobile -->
-    <div class="absolute inset-0 z-0 block sm:hidden bg-cover bg-center" style="background-image: url('Background.jpg');">
-    </div>
-
-    <!-- Overlay -->
+    <div class="absolute inset-0 z-0 block sm:hidden bg-cover bg-center" style="background-image: url('Background.jpg');"></div>
     <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
 
-    <!-- Hero Content -->
     <div class="relative z-20 flex flex-col justify-center items-start h-screen px-6 md:px-16 lg:px-32">
       <h1 class="text-4xl font-bold mb-4">Unleash the Fury</h1>
       <p class="mb-6 max-w-md">Experience the raw power of Metal Mania, the band that's redefining heavy metal for a new generation.</p>
@@ -41,7 +34,7 @@
     </div>
   </section>
 
-  <!-- Posters Section sobreposto entre Hero e Shows -->
+  <!-- Posters Section -->
   <div class="relative z-30 -mt-24 sm:-mt-32 mb-12 px-6 md:px-16 lg:px-32 flex flex-wrap justify-center gap-[52px]">
     <div class="p-2 shadow-lg max-w-[300px]">
       <img src="capa02.jpg" alt="Show Poster" class="w-full">
@@ -61,16 +54,12 @@
     </div>
   </div>
 
-  <!-- Shows Section com imagem aumentada -->
+  <!-- Shows Section -->
   <section id="shows" class="py-40 px-6 md:px-16 lg:px-32 text-white relative bg-cover bg-center" style="background-image: url('Background.jpg');">
-    
-    <!-- Optional overlay for better contrast -->
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-
     <div class="relative z-10 space-y-6">
       <h2 class="text-2xl font-bold">Shows</h2>
       <p>Show your allegiance to Metal Mania with our exclusive merchandise. From t-shirts to hoodies, we've got everything you need to represent the band.</p>
-
       <div class="space-y-4">
         <div class="flex justify-between items-center border-b border-gray-300 py-2">
           <span>07 de junho 2025 - Elas em cena - Santa Gertrudes - SP</span>
@@ -93,19 +82,58 @@
     <h2 class="text-2xl font-bold mb-4">Merchandise</h2>
     <p class="mb-8">Show your allegiance to Metal Mania with our exclusive merchandise. From t-shirts to hoodies, we've got everything you need to represent the band.</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+      <!-- Card com carrossel -->
       <div class="bg-gray-100 p-4 max-w-[300px]">
-        <img src="moletom.jpg" alt="Moletom" class="w-full">
+        <div class="relative">
+          <img src="moletom1.jpg" class="w-full merch-img">
+          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
+          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
+        </div>
         <p class="mt-2 text-sm">Accessories<br>Complete your look with patches, hats, and more.</p>
+        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
       </div>
+
       <div class="bg-gray-100 p-4 max-w-[300px]">
-        <img src="kintsugi.jpg" alt="kintsugi" class="w-full">
+        <div class="relative">
+          <img src="kintsugi1.jpg" class="w-full merch-img">
+          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
+          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
+        </div>
         <p class="mt-2 text-sm">Accessories<br>Complete your look with patches, hats, and more.</p>
+        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
       </div>
+
       <div class="bg-gray-100 p-4 max-w-[300px]">
-        <img src="https://via.placeholder.com/300x300.png?text=Merch" alt="Merch" class="w-full">
+        <div class="relative">
+          <img src="merch1.jpg" class="w-full merch-img">
+          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
+          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
+        </div>
         <p class="mt-2 text-sm">Accessories<br>Complete your look with patches, hats, and more.</p>
-      </div>     
+        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+      </div>
+
+      <div class="bg-gray-100 p-4 max-w-[300px]">
+        <div class="relative">
+          <img src="merch2.jpg" class="w-full merch-img">
+          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
+          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
+        </div>
+        <p class="mt-2 text-sm">Accessories<br>Complete your look with patches, hats, and more.</p>
+        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+      </div>
+
+      <div class="bg-gray-100 p-4 max-w-[300px]">
+        <div class="relative">
+          <img src="merch3.jpg" class="w-full merch-img">
+          <button onclick="prevSlide(this)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-1">‹</button>
+          <button onclick="nextSlide(this)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-1">›</button>
+        </div>
+        <p class="mt-2 text-sm">Accessories<br>Complete your look with patches, hats, and more.</p>
+        <button class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded">Comprar</button>
+      </div>
+    </div>
   </section>
 
   <!-- Material de Divulgação Section -->
@@ -119,6 +147,31 @@
       Baixar Material
     </a>
   </section>
+
+<script>
+  const images = [
+    ['moletom1.jpg', 'moletom2.jpg', 'moletom3.jpg'],
+    ['kintsugi1.jpg', 'kintsugi2.jpg', 'kintsugi3.jpg'],
+    ['merch1.jpg', 'merch1b.jpg', 'merch1c.jpg'],
+    ['merch2.jpg', 'merch2b.jpg', 'merch2c.jpg'],
+    ['merch3.jpg', 'merch3b.jpg', 'merch3c.jpg']
+  ];
+  let indices = [0, 0, 0, 0, 0];
+
+  function nextSlide(btn) {
+    const card = btn.closest('div').parentElement;
+    const idx = Array.from(card.parentElement.children).indexOf(card);
+    indices[idx] = (indices[idx] + 1) % images[idx].length;
+    card.querySelector('.merch-img').src = images[idx][indices[idx]];
+  }
+
+  function prevSlide(btn) {
+    const card = btn.closest('div').parentElement;
+    const idx = Array.from(card.parentElement.children).indexOf(card);
+    indices[idx] = (indices[idx] - 1 + images[idx].length) % images[idx].length;
+    card.querySelector('.merch-img').src = images[idx][indices[idx]];
+  }
+</script>
 
 </body>
 </html>
