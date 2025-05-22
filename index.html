@@ -9,9 +9,6 @@
     html {
       scroll-behavior: smooth;
     }
-    iframe {
-      pointer-events: none; /* Evita interações com o vídeo */
-    }
   </style>
 </head>
 <body class="bg-black text-white font-sans overflow-x-hidden">
@@ -21,13 +18,10 @@
     
     <!-- Video background for desktop -->
     <div class="absolute inset-0 z-0 hidden sm:block">
-      <iframe 
-        class="w-full h-full"
-        src="https://www.youtube.com/embed/8zzvWDda79Q?autoplay=1&mute=1&controls=0&loop=1&playlist=8zzvWDda79Q&rel=0" 
-        frameborder="0" 
-        allow="autoplay; encrypted-media" 
-        allowfullscreen>
-      </iframe>
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="divulgacao.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
     </div>
 
     <!-- Image background for mobile -->
