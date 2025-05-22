@@ -18,8 +18,9 @@
 
   <!-- Hero Section + Posters sobrepostos -->
   <section id="noticias" class="relative overflow-hidden">
-    <!-- Video background -->
-    <div class="absolute inset-0 z-0">
+    
+    <!-- Video background for desktop -->
+    <div class="absolute inset-0 z-0 hidden sm:block">
       <iframe 
         class="w-full h-full"
         src="https://www.youtube.com/embed/8zzvWDda79Q?autoplay=1&mute=1&controls=0&loop=1&playlist=8zzvWDda79Q&rel=0" 
@@ -27,6 +28,10 @@
         allow="autoplay; encrypted-media" 
         allowfullscreen>
       </iframe>
+    </div>
+
+    <!-- Image background for mobile -->
+    <div class="absolute inset-0 z-0 block sm:hidden bg-cover bg-center" style="background-image: url('Background.jpg');">
     </div>
 
     <!-- Overlay -->
@@ -40,7 +45,7 @@
     </div>
 
     <!-- Posters Section sobreposto -->
-    <div class="relative z-20 -mt-24 px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="relative z-20 -mt-12 sm:-mt-24 px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <div class="p-2 shadow-lg">
         <img src="capa02.jpg" alt="Show Poster" class="w-full">
         <p class="mt-2 text-sm">a gentil indiferença do mundo</p>
